@@ -1,0 +1,104 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+body {
+  background-color: #0d0d0d;
+  background-image: 
+    linear-gradient(to right, rgba(34, 34, 34, 0.442) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 34, 34, 0.442) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-repeat: repeat;
+  color: white;
+  font-weight: 500;
+  font-family: var(--font-geist-sans);
+  
+}
+body::-webkit-scrollbar {
+  display: none; 
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --radius: 
+    0.5rem; 
+  } 
+}
+
+*:hover {
+  transition: all 0.5s ease-in-out; /* Activates transition when any element is hovered */
+}
+
+@keyframes scaleAnimation {
+  0% {
+      transform: scale(0.1);
+  }
+  75% {
+      transform: scale(1.1); /* Scale up by 20% */
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.main-heading {
+  
+  animation: scaleAnimation 1s ; /* Run the animation continuously */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: #a2a1a162;
+  background-image: linear-gradient(45deg, transparent,white,rgba(221, 255, 0, 0.642),rgba(221, 255, 0, 0.642));
+
+  background-size: 200% 200%;
+}
+
+.glow-btn{
+  /* -webkit-box-reflect: below 3px linear-gradient(transparent, rgba(221, 255, 0, 0.042)); */
+  box-shadow: 0 5px 7px rgba(221, 255, 0, 0.266), 0 4px 6px rgba(0, 0, 0, 0.2);
+
+  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  */
+}
+
+
+
+.text-grad{
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: #a2a1a162;
+  background-image: linear-gradient(45deg, transparent,white,rgba(221, 255, 0, 0.642),rgba(221, 255, 0, 0.642));
+
+  background-size: 200% 200%;
+}
+@keyframes shake {
+  0% { transform: translate(3px, 0); }
+  25% { transform: translate(-3px, 0); }
+  50% { transform: translate(3px, 0); }
+  75% { transform: translate(-3px, 0); }
+  100% { transform: translate(0, 0); }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.webcodge{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
