@@ -17,16 +17,16 @@ const geistMono = localFont({
 });
 const baseUrl = 'https://webcodge.vercel.app'
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "WebCodge | Expert Web Development Solutions",
   description: "Discover WebCodge, where we specialize in high-quality web development services, including custom landing pages and SEO optimization.",
   openGraph: {
     title: "WebCodge | Expert Web Development Solutions",
     description: "Discover WebCodge, where we specialize in high-quality web development services, including custom landing pages and SEO optimization.",
-    url: baseUrl,
+    url: "https://your-domain.com", // replace with your base URL
     images: [
       {
-        url: baseUrl + "/webcodge-logo.png", 
+        url: "https://your-domain.com/webcodge-logo.png", // replace with your image URL
         width: 1200,
         height: 630,
         alt: "WebCodge banner image showcasing web development services",
@@ -35,16 +35,19 @@ export const metadata: Metadata = {
     siteName: "WebCodge",
     type: "website",
   },
+  robots: {
+    index: true,  // Allows search engines to index the page
+    follow: true, // Allows search engines to follow links on the page
+  },
   twitter: {
     card: "summary_large_image",
-    site: "@webCodge",  
+    site: "@webCodge",
     title: "WebCodge | Expert Web Development Solutions",
     description: "Discover WebCodge, where we specialize in high-quality web development services, including custom landing pages and SEO optimization.",
-    images: baseUrl + "/webcodge-logo.png",  // Full URL to the image
+    images: "https://your-domain.com/webcodge-logo.png", // replace with your image URL
   },
   keywords: "WebCodge, web development, landing pages, SEO, custom websites, Saeed PK",
-  metadataBase: new URL(baseUrl),
-  authors: [{ name: "Saeed PK", url: baseUrl }],
+  authors: [{ name: "Saeed PK", url: "https://your-domain.com" }], // replace with your URL
   generator: "Next.js",
   referrer: "no-referrer",
   creator: "Saeed PK",
