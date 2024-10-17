@@ -11,15 +11,15 @@ const Landing = () => {
         <div className=" text-white justify-center flex flex-col">
           <div className="mx-auto my-auto  border border-gray-900 bg-[#0d0d0d] rounded-3xl px-3 py-1 flex items-center w-fit">
             <Avatar className="w-5 h-5">
-              <AvatarImage src="/profile.jpg" />
+              <AvatarImage src="https://framerusercontent.com/images/SyIz5hIRFh60MmeXi2QL4ogIww.png" />
               <AvatarFallback>WC</AvatarFallback>
             </Avatar>
             <Avatar className="w-5 h-5 ml-[-5px]">
-              <AvatarImage src="/profile.jpg" />
+              <AvatarImage src="https://framerusercontent.com/images/2JqS1V57M74bl8BPN2l4Hs2j0k.png" />
               <AvatarFallback>WC</AvatarFallback>
             </Avatar>
             <Avatar className="w-5 h-5 ml-[-5px]">
-              <AvatarImage src="/profile.jpg" />
+              <AvatarImage src="https://framerusercontent.com/images/5P0eN6qtSxQg8Lrk6rw2GR9e7eI.jpg?scale-down-to=1024" />
               <AvatarFallback>WC</AvatarFallback>
             </Avatar>
             <span className="text-gray-300 text-sm ml-3 tracking-widest">500+ Satisfied Clients</span>

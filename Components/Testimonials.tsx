@@ -31,7 +31,7 @@ const Testimonials = () => {
                         <div className="flex items-center">
                             <span className='mr-5'>
                               <Avatar className="w-5 h-5">
-                                <AvatarImage src="/profile.jpg" />
+                                <AvatarImage src={testimonial.image} />
                                 <AvatarFallback>CN</AvatarFallback>
                               </Avatar>
                             </span>
@@ -72,7 +72,7 @@ const Testimonials = () => {
                         <div className="flex items-center">
                             <span className='mr-5'>
                               <Avatar className="w-5 h-5">
-                                <AvatarImage src="/profile.jpg" />
+                                <AvatarImage src={testimonial.image} />
                                 <AvatarFallback>CN</AvatarFallback>
                               </Avatar>
                             </span>
