@@ -17,7 +17,7 @@ const FAQs = [
     },
     {
         question: "What technologies do you use for web development?",
-        answer: "At WebCodge, we utilize a variety of technologies, including the MEN stack (MongoDB, Express.js, Node.js) for full-stack development, as well as modern tools like Next.js for creating fast and responsive front-end applications."
+        answer: "At WebCodge, we utilize a variety of technologies, including the MERN stack (MongoDB, Express.js, React, Node.js) for full-stack development, as well as modern tools like Next.js for creating fast and responsive front-end and full-stack applications."
     },
     {
         question: "How can I get a quote for my project?",

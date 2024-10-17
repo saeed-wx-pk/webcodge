@@ -24,13 +24,13 @@ const Landing = () => {
             </Avatar>
             <span className="text-gray-300 text-sm ml-3 tracking-widest">500+ Satisfied Clients</span>
           </div>
-          <div className="mt-5 text-center text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold main-heading lg:max-w-[20ch]">
-            Elevate Your Startup with <br className='hidden sm:block'/>
-            Tailored Web Solutions.
-          </div>
+          <h1 className="mt-5 text-center text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold main-heading lg:max-w-[20ch]">
+            Empower Your Startup with <br className="hidden sm:block" />
+            WebCodge's Tailored Web Solutions!
+          </h1>
 
           <div className="text-gray-600 text-xs  lg:text-base max-w-[40ch] sm:max-w-[50ch] mx-auto text-center mt-5">
-          <span className="text-gray-400">Unlock your startup's potential with $29 !</span> with customized web solutions designed to fit your <span className="text-gray-400">unique needs.</span> Let's build your <span className="text-gray-400">digital presence</span> together!
+          <span className="text-gray-400">Unlock your startup's potential with $29 !</span> with customized web solutions designed to fit your <span className="text-gray-400">unique needs.</span> Let's build your <span className="text-gray-400">digital presence</span> together with webcodge!
           </div>
           <div className="mx-auto flex gap-5 mt-10 flex-wrap  justify-center text-gray-500">
             <div className="border border-gray-900 bg-[#0d0d0d] rounded-3xl px-3 py-1 w-fit text-xs md:text-base">SEO Optimization</div>

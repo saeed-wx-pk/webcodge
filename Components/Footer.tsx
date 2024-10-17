@@ -10,11 +10,12 @@ const Footer = () => {
         <div className="mx-auto text-center mt-10">
             <Image
               src="/webcodge-logo(2).png"
-              alt='webcodge-icon'
+              alt='webcodge'
               width={250}
               height={20}
               className="mx-auto"
             /> 
+            <p className="sr-only">webcodge</p>
             <p className='text-base text-gray-600 mt-5 md:max-w-[60ch] sm:max-w-[40ch] max-w-[30ch]'>Unlock your startup's potential with customized web solutions designed to fit your unique needs. Let's build your digital presence together!</p>
             <div className="border border-gray-900 bg-foreground rounded-full flex px-7 py-5 mt-5 mx-auto w-fit gap-2 text-sm sm:gap-3  sm:text-base md:gap-5 md:text-xl text-gray-500 ">
                 <Link href="/#features" className="hover:text-gray-400">Features</Link>

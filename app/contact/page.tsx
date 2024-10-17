@@ -5,7 +5,15 @@ import { Textarea } from '@/Components/ui/textarea'
 import {  ArrowRightIcon } from 'lucide-react'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { toast } from 'react-toastify'
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/Components/ui/carousel"
+import { toast } from '@/hooks/use-toast'
 
 
 
@@ -44,10 +52,15 @@ async function handleSubmit(){
     })
     if (response.ok) {
       console.log('Message submitted successfully');
-      toast.success("Message submitted successfully");
+      toast({
+        title: "Message submitted successfully",
+      })
     } else {
       console.error('Failed to submit message');
-      toast.error("Failed to submit message");
+      toast({
+        title: "Failed to submit message",
+        description: "Please try again",
+      })
     }
   } catch (error) {
     console.error('Error:', error);
@@ -131,20 +144,20 @@ async function handleSubmit(){
         </div>
         <div className="md:flex-row flex-col flex  w-full gap-5 mt-5">
           <a
-            href="mailto:webcodge@gmail.com"
+            href="https://"
             className="bg-foreground rounded-2xl md:w-1/2 mx-5 px-5 py-3 transition-all duration-300 hover:bg-[#202020] group"
           >
             <div className="flex items-center">
               <div className="bg-[#202020] p-2 rounded-xl mr-4">
                 <Image
-                  src="/icons/mail.svg"
+                  src="/icons/instagram.svg"
                   alt="mail-icon"
                   width={20}
                   height={20}
                 />
               </div>
               <span className="flex items-center space-x-2 w-full">
-                Email Us
+                Instagram
                 {/* Arrow icon */}
                 <span className="transform -rotate-45 ml-auto transition-transform duration-300 group-hover:rotate-0">
                   <ArrowRightIcon/>
@@ -152,7 +165,7 @@ async function handleSubmit(){
               </span>
             </div>
             <div className="mt-3 hidden md:flex text-gray-500 text-lg tracking-wide">
-              webcodge@gmail.com
+              webcodge
             </div>
           </a>
           <a
@@ -162,14 +175,14 @@ async function handleSubmit(){
             <div className="flex items-center">
               <div className="bg-[#202020] p-2 rounded-xl mr-4">
                 <Image
-                  src="/icons/x.svg"
+                  src="/icons/facebook.svg"
                   alt="x-icon"
                   width={20}
                   height={20}
                 />
               </div>
               <span className="flex items-center space-x-2 w-full">
-                Twitter X
+                facebook
                 {/* Arrow icon */}
                 <span className="transform -rotate-45 ml-auto transition-transform duration-300 group-hover:rotate-0">
                   <ArrowRightIcon/>
@@ -177,9 +190,72 @@ async function handleSubmit(){
               </span>
             </div>
             <div className="mt-3 hidden md:flex text-gray-500 text-lg tracking-wide">
-              @webCodge
+              webcodge
             </div>
           </a>
+        </div>
+        <div className="mx-auto w-fit mt-16 text-center hidden md:block">
+          <h3 className="text-grad text-4xl mb-10 font-bold">Explore our brandmarks</h3>
+          <Carousel>
+            <CarouselContent>
+              <CarouselItem>
+                <Image
+                  src="/webcodge-logo.png"
+                  alt="webcodge"
+                  width={600}
+                  height={200}
+                  className='rounded-3xl '
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src="/webcodge/webcodge(1).png"
+                  alt="webcodge"
+                  width={600}
+                  height={200}
+                  className='rounded-3xl '
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src="/webcodge/webcodge(4).png"
+                  alt="webcodge"
+                  width={600}
+                  height={200}
+                  className='rounded-3xl '
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src="/webcodge/webcodge(3).png"
+                  alt="webcodge"
+                  width={600}
+                  height={200}
+                  className='rounded-3xl '
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src="/webcodge/webcodge(5).png"
+                  alt="webcodge"
+                  width={600}
+                  height={200}
+                  className='rounded-3xl '
+                />
+              </CarouselItem>
+              <CarouselItem>
+                <Image
+                  src="/webcodge/webcodge(2).png"
+                  alt="webcodge"
+                  width={600}
+                  height={200}
+                  className='rounded-3xl '
+                />
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious className='bg-foreground hover:bg-light_green'/>
+            <CarouselNext className='bg-foreground hover:bg-light_green'/>
+          </Carousel>
         </div>
       </div>
     </div>

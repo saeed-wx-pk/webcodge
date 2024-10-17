@@ -1,6 +1,6 @@
 "use client"
+import { toast } from '@/hooks/use-toast'
 import React, { useState } from 'react'
-import { toast } from 'react-toastify'
 
 const CalltoAction = () => {
   const [email, setEmail] = useState('')
@@ -23,11 +23,16 @@ const CalltoAction = () => {
 
         if (response.ok) {
           console.log('Message submitted successfully');
-          toast.success("You are a Part of Our Community");
+          toast({
+            title: "You are a Part of Our Community",
+          })
           setEmail('')
         } else {
           console.error('Failed to submit message');
-          toast.error("Failed to submit email try again");
+          toast({
+            title: "Failed to submit email try again",
+            description: "Please try again",
+          })
         }
       } catch (error) {
         console.error('Error:', error);

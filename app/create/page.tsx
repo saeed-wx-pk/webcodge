@@ -8,7 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/Components/ui/select"
-import {  toast } from 'react-toastify';
+import { toast } from '@/hooks/use-toast';
 
 
 const page = () => {
@@ -77,7 +77,10 @@ const page = () => {
 
       if (response.ok) {
         console.log('Order submitted successfully');
-        toast.success("Order submitted successfully");
+        toast({
+          title: "Order submitted successfully",
+          description: "Thanks For Your Order",
+        })
         setFormData({
           name: '',
           email: '',
@@ -89,7 +92,11 @@ const page = () => {
         })
       } else {
         console.error('Failed to submit order');
-        toast.error("Failed to submit order");
+        toast({
+          
+          title: "Failed to submit order",
+          description: "Please try again",
+        })
       }
     } catch (error) {
       console.error('Error:', error);

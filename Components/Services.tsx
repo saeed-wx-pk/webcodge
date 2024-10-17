@@ -26,7 +26,7 @@ const Services = () => {
               />
             </div>
             <h3 className='md:text-xl text-lg'>Personalized Design</h3>
-            <p className='text-gray-500'>We've got the expertise to make your vision a reality.</p>
+            <p className='text-gray-500'>At WebCodge, we transform your unique vision into stunning designs that truly reflect your brand and engage your audience.</p>
           </div>
         </ScrollAnimation>
         <ScrollAnimation delay={0.9}>
@@ -41,7 +41,7 @@ const Services = () => {
               />
             </div>
             <h3 className='md:text-xl text-lg'>Evolving with your business</h3>
-            <p className='text-gray-500'>We're here to support your growth.</p>
+            <p className='text-gray-500'>At WebCodge, we adapt our web solutions to support your unique growth journey, ensuring you thrive in an ever-evolving market.</p>
           </div>
         </ScrollAnimation>
         <ScrollAnimation delay={1.1}>
@@ -56,14 +56,14 @@ const Services = () => {
               />
             </div>
             <h3 className='md:text-xl text-lg'>Tailored SEO Solutions</h3>
-            <p className='text-gray-500'>Personalized SEO Solutions for Enhanced Online Visibility</p>
+            <p className='text-gray-500'>At WebCodge, we offer personalized SEO solutions designed to enhance your online visibility and drive targeted traffic to your website.</p>
           </div>
         </ScrollAnimation>
       </div>
       <div className="mt-10 flex md:justify-center gap-10 md:flex-row md:flex-wrap flex-col items-center">
         <ScrollAnimation >
           <div className="bg-foreground-gradient rounded-3xl w-80 sm:w-96 h-96 md:w-[37rem] md:h-40 flex flex-col md:flex-row items-start justify-end">
-            <div className="bg-[#121212] rounded-full p-10 mb-auto mr-5 mt-10 ml-10">
+            <div className="bg-[#121212] rounded-full p-10 mb-auto mr-5 mt-7 ml-10">
               <Image
                 src='/icons/tik-card.svg'
                 alt='plane'
@@ -72,7 +72,7 @@ const Services = () => {
                 className=''
               />
             </div>
-            <div className="p-10">
+            <div className="p-7">
               <h3 className='md:text-xl text-lg'>Reliable Static Web Solutions</h3>
               <p className='text-gray-500'>Fast-loading websites that are easy to maintain, perfect for showcasing your brand.</p>
             </div>
@@ -80,16 +80,16 @@ const Services = () => {
         </ScrollAnimation>
         <ScrollAnimation delay={0.9}>
           <div className="bg-foreground-gradient rounded-3xl w-80 sm:w-96 h-96 md:w-[37rem] md:h-40 flex flex-col md:flex-row items-start justify-end ">
-            <div className="bg-[#121212] rounded-full p-10 mb-auto mr-5 mt-10 ml-10">
+            <div className="bg-[#121212] rounded-full p-10 mb-auto mr-5 mt-7 ml-10">
               <Image
-                src='/icons/plane.svg'
+                src='/icons/bolt.svg'
                 alt='plane'
                 width={80}
                 height={80}
                 className=''
               />
             </div>
-            <div className="p-10">
+            <div className="p-7">
               <h3 className='md:text-xl text-lg'>Engaging Dynamic Web Experiences</h3>
               <p className='text-gray-500'>Interactive websites that adapt to users, offering real-time updates and personalized content.</p>
             </div>
