@@ -44,7 +44,7 @@ export const metadata = {
     site: "@webCodge",
     title: "WebCodge | Expert Web Development Solutions",
     description: "Discover WebCodge, where we specialize in high-quality web development services, including custom landing pages and SEO optimization.",
-    images: baseUrl + "/webcodge-logo.png", // replace with your image URL
+    images: [baseUrl + "/webcodge-logo.png"], // replace with your image URL
   },
   keywords: "WebCodge, web development, landing pages, SEO, custom websites, Saeed PK",
   authors: [{ name: "Saeed PK", url: baseUrl }], // replace with your URL
@@ -54,6 +54,10 @@ export const metadata = {
   publisher: "WebCodge",
   category: "Web Development, Digital Services",
   classification: "Professional Services, Personal Branding",
+
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
 };
 
 
@@ -72,7 +76,7 @@ export default function RootLayout({
             defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
-          >
+        >
           <Navbar /> 
           {children}
           <Footer/>
