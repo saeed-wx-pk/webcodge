@@ -23,10 +23,10 @@ export const metadata = {
   openGraph: {
     title: "WebCodge | Expert Web Development Solutions",
     description: "Discover WebCodge, where we specialize in high-quality web development services, including custom landing pages and SEO optimization.",
-    url: "https://your-domain.com", // replace with your base URL
+    url: baseUrl , // replace with your base URL
     images: [
       {
-        url: "https://your-domain.com/webcodge-logo.png", // replace with your image URL
+        url: baseUrl + "/webcodge-logo.png", // replace with your image URL
         width: 1200,
         height: 630,
         alt: "WebCodge banner image showcasing web development services",
@@ -44,10 +44,10 @@ export const metadata = {
     site: "@webCodge",
     title: "WebCodge | Expert Web Development Solutions",
     description: "Discover WebCodge, where we specialize in high-quality web development services, including custom landing pages and SEO optimization.",
-    images: "https://your-domain.com/webcodge-logo.png", // replace with your image URL
+    images: baseUrl + "/webcodge-logo.png", // replace with your image URL
   },
   keywords: "WebCodge, web development, landing pages, SEO, custom websites, Saeed PK",
-  authors: [{ name: "Saeed PK", url: "https://your-domain.com" }], // replace with your URL
+  authors: [{ name: "Saeed PK", url: baseUrl }], // replace with your URL
   generator: "Next.js",
   referrer: "no-referrer",
   creator: "Saeed PK",
