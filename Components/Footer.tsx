@@ -44,7 +44,7 @@ const Footer = () => {
               alt="x-icon"
             />
           </Link>
-          <Link href="https://instagram.com/webcodge">
+          <Link href="https://www.facebook.com/profile.php?id=61567015746687">
             <Image
               src="/icons/facebook.svg"
               width={20}

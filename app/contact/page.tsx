@@ -202,6 +202,7 @@ async function handleSubmit(){
           <Carousel>
             <CarouselContent>
               <CarouselItem>
+                <a href="https://webcodge.vercel.app">
                 <Image
                   src="/webcodge-logo.png"
                   alt="webcodge"
@@ -209,8 +210,10 @@ async function handleSubmit(){
                   height={200}
                   className='rounded-3xl '
                 />
+                </a>
               </CarouselItem>
               <CarouselItem>
+                <a href="https://webcodge.vercel.app">
                 <Image
                   src="/webcodge/webcodge(1).png"
                   alt="webcodge"
@@ -218,8 +221,10 @@ async function handleSubmit(){
                   height={200}
                   className='rounded-3xl '
                 />
+                </a>
               </CarouselItem>
               <CarouselItem>
+                <a href="https://webcodge.vercel.app">
                 <Image
                   src="/webcodge/webcodge(4).png"
                   alt="webcodge"
@@ -227,8 +232,10 @@ async function handleSubmit(){
                   height={200}
                   className='rounded-3xl '
                 />
+                </a>
               </CarouselItem>
               <CarouselItem>
+                <a href="https://webcodge.vercel.app">
                 <Image
                   src="/webcodge/webcodge(3).png"
                   alt="webcodge"
@@ -236,8 +243,10 @@ async function handleSubmit(){
                   height={200}
                   className='rounded-3xl '
                 />
+                </a>
               </CarouselItem>
               <CarouselItem>
+                <a href="https://webcodge.vercel.app">
                 <Image
                   src="/webcodge/webcodge(5).png"
                   alt="webcodge"
@@ -245,8 +254,10 @@ async function handleSubmit(){
                   height={200}
                   className='rounded-3xl '
                 />
+                </a>
               </CarouselItem>
               <CarouselItem>
+                <a href="https://webcodge.vercel.app">
                 <Image
                   src="/webcodge/webcodge(2).png"
                   alt="webcodge"
@@ -254,6 +265,7 @@ async function handleSubmit(){
                   height={200}
                   className='rounded-3xl '
                 />
+                </a>
               </CarouselItem>
             </CarouselContent>
             <CarouselPrevious className='bg-foreground hover:bg-light_green'/>
