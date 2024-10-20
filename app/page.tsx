@@ -4,7 +4,7 @@ import { About, FAQ, Landing, Workflow, Services, Testimonials, CalltoAction, Wh
 
 export default function Home() {
   return (
-    <main className="lg:mt-48 mt-40 ">
+    <main className="lg:mt-48 mt-40">
       <Landing/>
       <Services/>
       <About/>
@@ -12,7 +12,7 @@ export default function Home() {
       <Testimonials/>
       <WhyWebcodge/>
       <FAQ/>
-      <CalltoAction/> 
+      <CalltoAction/>
     </main>
   );
 }

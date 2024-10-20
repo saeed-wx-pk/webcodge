@@ -1,5 +1,8 @@
 # WebCodge
 
+![WebCodge Logo](public/webcodge-ui.png)
+
+
 **Crafting Digital Excellence Together**
 
 Welcome to **WebCodge**! We specialize in creating innovative web development solutions tailored to meet the needs of businesses and individuals. Whether you're looking for a landing page, dynamic websites, or custom web applications, WebCodge delivers high-quality design and technical expertise.

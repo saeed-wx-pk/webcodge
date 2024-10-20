@@ -55,6 +55,9 @@ async function handleSubmit(){
       toast({
         title: "Message submitted successfully",
       })
+      setName('')
+      setEmail('')
+      setMessage('')
     } else {
       console.error('Failed to submit message');
       toast({
@@ -133,10 +136,10 @@ async function handleSubmit(){
         <div className="bg-foreground rounded-2xl mt-5 p-5 mx-5">
           <div className="grid w-full gap-2">
             <div className="md:flex-row flex-col flex gap-2">
-              <Input onChange={(e)=>setName(e.target.value)} name='name' type="text" placeholder="Name" className={`border-none outline-none bg-[#202020] md:w-1/2 ${invalid.name ? 'border border-red-500' : ''}`}/>
-              <Input onChange={(e)=>setEmail(e.target.value)} name='email' type="email" placeholder="Email" className={`border-none outline-none bg-[#202020] md:w-1/2 ${invalid.email ? 'border border-red-500' : ''}`}/>
+              <Input value={name} onChange={(e)=>setName(e.target.value)} name='name' type="text" placeholder="Name" className={`border-none outline-none bg-[#202020] md:w-1/2 ${invalid.name ? 'border border-red-500' : ''}`}/>
+              <Input value={email} onChange={(e)=>setEmail(e.target.value)} name='email' type="email" placeholder="Email" className={`border-none outline-none bg-[#202020] md:w-1/2 ${invalid.email ? 'border border-red-500' : ''}`}/>
             </div>
-            <Textarea onChange={(e)=>setMessage(e.target.value)} placeholder="Type your message here." className='border-none outline-none bg-[#202020] ' rows={4} required/>
+            <Textarea value={message} onChange={(e)=>setMessage(e.target.value)} placeholder="Type your message here." className='border-none outline-none bg-[#202020] ' rows={4} required/>
             <Button onClick={handleSubmit} className='hover:bg-light_green text-black mt-4 bg-[#ddff00e0] group' >Send message
               <ArrowRightIcon className="h-5 w-5 mr-2 transform -rotate-45 transition-transform duration-300 group-hover:rotate-0 ml-5" />
             </Button>
@@ -144,14 +147,14 @@ async function handleSubmit(){
         </div>
         <div className="md:flex-row flex-col flex  w-full gap-5 mt-5">
           <a
-            href="https://"
+            href="https://www.instagram.com/webcodge"
             className="bg-foreground rounded-2xl md:w-1/2 mx-5 px-5 py-3 transition-all duration-300 hover:bg-[#202020] group"
           >
             <div className="flex items-center">
               <div className="bg-[#202020] p-2 rounded-xl mr-4">
                 <Image
                   src="/icons/instagram.svg"
-                  alt="mail-icon"
+                  alt="instagram-icon"
                   width={20}
                   height={20}
                 />
@@ -169,20 +172,20 @@ async function handleSubmit(){
             </div>
           </a>
           <a
-            href="https://x.com/webCodge"
+            href="https://www.linkedin.com/company/webcodge"
             className="bg-foreground rounded-2xl md:w-1/2 mx-5 px-5 py-3 transition-all duration-300 hover:bg-[#202020] group"
           >
             <div className="flex items-center">
               <div className="bg-[#202020] p-2 rounded-xl mr-4">
                 <Image
-                  src="/icons/facebook.svg"
-                  alt="x-icon"
+                  src="/icons/linkedin.svg"
+                  alt="linkedin-icon"
                   width={20}
                   height={20}
                 />
               </div>
               <span className="flex items-center space-x-2 w-full">
-                facebook
+                LinkedIn
                 {/* Arrow icon */}
                 <span className="transform -rotate-45 ml-auto transition-transform duration-300 group-hover:rotate-0">
                   <ArrowRightIcon/>

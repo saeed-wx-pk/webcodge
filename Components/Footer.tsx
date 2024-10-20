@@ -28,7 +28,7 @@ const Footer = () => {
             </div>
         </div>
         <div className="mx-auto flex mt-5 gap-5">
-          <Link href="">
+          <Link href="https://instagram.com/webcodge">
             <Image
               src="/icons/instagram.svg"
               width={20}
@@ -36,7 +36,7 @@ const Footer = () => {
               alt="instagram-icon"
             />
           </Link>
-          <Link href="">
+          <Link href="https://x.com/webCodge">
             <Image
               src="/icons/x.svg"
               width={20}
@@ -44,7 +44,7 @@ const Footer = () => {
               alt="x-icon"
             />
           </Link>
-          <Link href="">
+          <Link href="https://instagram.com/webcodge">
             <Image
               src="/icons/facebook.svg"
               width={20}
@@ -52,7 +52,7 @@ const Footer = () => {
               alt="facebook-icon"
             />
           </Link>
-          <Link href="">
+          <Link href="mailto:webcodge@gmail.com">
             <Image
               src="/icons/mail.svg"
               width={20}
@@ -60,7 +60,7 @@ const Footer = () => {
               alt="mail-icon"
             />
           </Link>
-          <Link href="">
+          <Link href="https://www.linkedin.com/company/webcodge">
             <Image
               src="/icons/linkedin.svg"
               width={20}

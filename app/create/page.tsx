@@ -17,19 +17,22 @@ const page = () => {
     name: '',
     email: '',
     serviceType: '',
-    budget: '',
     description: '',
     timeline: '',
-    subServiceType: '',
+    phNumber:'',
+    webDevType: '',
+    currentUrl:''
   });
 
   const [invalidFields, setInvalidFields] = useState({
     name: false,
     email: false,
     serviceType: false,
-    budget: false,
     description: false,
     timeline: false,
+    phNumber:false,
+    webDevType: false,
+    currentUrl:false,
   });
 
   const handleChange = (e:any) => {
@@ -49,7 +52,9 @@ const page = () => {
       name: !formData.name,
       email: !formData.email,
       serviceType: step === 2 && !formData.serviceType,
-      budget: step === 2 && !formData.budget,
+      webDevType: step === 2 && !formData.webDevType && formData.serviceType === 'Web Development',
+      currentUrl: step === 2 && !formData.currentUrl && formData.serviceType === 'Web Updation' || formData.serviceType === 'SEO',
+      phNumber: step === 2 && !formData.phNumber,
       timeline: step === 3 && !formData.timeline,
       description: step === 3 && !formData.description,
     };
@@ -85,15 +90,16 @@ const page = () => {
           name: '',
           email: '',
           serviceType: '',
-          budget: '',
           description: '',
           timeline: '',
-          subServiceType: '',
+          webDevType: '',
+          currentUrl:'',
+          phNumber:'',
         })
+        setStep(1)
       } else {
         console.error('Failed to submit order');
         toast({
-          
           title: "Failed to submit order",
           description: "Please try again",
         })
@@ -164,49 +170,52 @@ const page = () => {
                   </SelectTrigger>
                   <SelectContent className='bg-black text-gray-300 border-none'>
                     <SelectGroup>
-                      <SelectItem value="webDevelopment" className="hover:bg-gray-400">Web Development with SEO</SelectItem>
-                      <SelectItem value="webupdation" className="hover:bg-gray-400">Website Updation with SEO</SelectItem>
-                      <SelectItem value="seo" className="hover:bg-gray-400">SEO Services</SelectItem>
+                      <SelectItem value="Web Development" className="hover:bg-gray-400">Web Development with SEO</SelectItem>
+                      <SelectItem value="Web Updation" className="hover:bg-gray-400">Website Updation with SEO</SelectItem>
+                      <SelectItem value="SEO" className="hover:bg-gray-400">SEO Services</SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>
               </div>
-              {formData.serviceType === 'webDevelopment' && (
-                <div className="flex items-center bg-black rounded-full p-2">
-                  <Select onValueChange={(value) => setFormData((prev) => ({ ...prev, subServiceType: value }))}>
+              {formData.serviceType === 'Web Development' && (
+                <div className={`flex items-center bg-black rounded-full p-2 ${invalidFields.webDevType ? 'border border-red-500' : ''}`}>
+                  <Select onValueChange={(value) => setFormData((prev) => ({ ...prev, webDevType: value }))}>
                     <SelectTrigger className="bg-transparent text-gray-300 h-12 placeholder-gray-500 border-none outline-none px-4 py-2 w-full">
                       <SelectValue placeholder="Select Sub-Service Type" />
                     </SelectTrigger>
                     <SelectContent className='bg-black text-gray-300 border-none'>
                       <SelectGroup>
-                        <SelectItem value="landingPage" className="hover:bg-gray-400">Landing Page - 2 Pages</SelectItem>
-                        <SelectItem value="multiPages" className="hover:bg-gray-400">Multi Pages</SelectItem>
+                        <SelectItem value="Landing Page" className="hover:bg-gray-400">Landing Page - 2 Pages</SelectItem>
+                        <SelectItem value="Multi Pages" className="hover:bg-gray-400">Multi Pages</SelectItem>
                       </SelectGroup>
                     </SelectContent>
                   </Select>
                 </div>
               )}
-              <div className={`flex items-center bg-black rounded-full p-2 ${invalidFields.budget ? 'border border-red-500' : ''}`}>
-                <input
-                  type="text"
-                  name="budget"
-                  placeholder={
-                    formData.serviceType === 'webDevelopment'
-                      ? (formData.subServiceType === 'landingPage' 
-                          ? "Are you ready with our best price $29" 
-                          : "Are you ready with our best price $34") 
-                      : formData.serviceType === 'mobileDevelopment'
-                      ? "Are you ready with our best price $19"
-                      : formData.serviceType === 'seo'
-                      ? "Are you ready with our best price $15"
-                      : "Are you ready" // Default placeholder if no service type matches
-                  }
-                  value={formData.budget}
-                  onChange={handleChange}
-                  className="bg-transparent text-gray-300 h-12 placeholder-gray-500 outline-none px-4 py-2 w-full"
-                  required
-                />
-              </div>
+              {(formData.serviceType === 'Web Updation' || formData.serviceType === 'SEO') && (
+                <div className={`flex items-center bg-black rounded-full p-2 ${invalidFields.currentUrl ? 'border border-red-500' : ''}`}>
+                    <input
+                    type="text"
+                    name="currentUrl"
+                    placeholder="Current Website Url"
+                    value={formData.currentUrl}
+                    onChange={handleChange}
+                    className="bg-transparent text-gray-300 h-12 placeholder-gray-500 outline-none px-4 py-2 w-full"
+                    required
+                  />
+                </div>
+              )}
+                <div className={`flex items-center bg-black rounded-full p-2 ${invalidFields.phNumber ? 'border border-red-500' : ''}`}>
+                  <input
+                    type="number"
+                    name="phNumber"
+                    placeholder="Your Contact Number"
+                    value={formData.phNumber}
+                    onChange={handleChange}
+                    className="bg-transparent text-gray-300 h-12 placeholder-gray-500 outline-none px-4 py-2 w-full"
+                    required
+                  />
+                </div>
             </div>
 
             <div className="flex justify-between mt-6">
@@ -235,15 +244,20 @@ const page = () => {
               <h2 className="text-lg font-semibold">Step 3: Project Timeline & Description</h2>
 
               <div className={`flex items-center bg-black rounded-full p-2 ${invalidFields.timeline ? 'border border-red-500' : ''}`}>
-                <input
-                  type="text"
-                  name="timeline"
-                  placeholder="Expected Timeline (weeks)"
-                  value={formData.timeline}
-                  onChange={handleChange}
-                  className="bg-transparent text-gray-300 h-12 placeholder-gray-500 outline-none px-4 py-2 w-full"
-                  required
-                />
+                
+                <Select onValueChange={(value) => setFormData((prev) => ({ ...prev, timeline: value }))}>
+                    <SelectTrigger className="bg-transparent text-gray-300 h-12 placeholder-gray-500 border-none outline-none px-4 py-2 w-full">
+                      <SelectValue placeholder="Expected Timeline (weeks)" />
+                    </SelectTrigger>
+                    <SelectContent className='bg-black text-gray-300 border-none'>
+                      <SelectGroup>
+                        <SelectItem value="2" className="hover:bg-gray-400">1 Week</SelectItem>
+                        <SelectItem value="2" className="hover:bg-gray-400">2 Weeks</SelectItem>
+                        <SelectItem value="3" className="hover:bg-gray-400">3 Weeks</SelectItem>
+                        <SelectItem value="3" className="hover:bg-gray-400">4 Weeks</SelectItem>
+                      </SelectGroup>
+                    </SelectContent>
+                </Select>
               </div>
 
               <div className={`flex items-center bg-black rounded-lg p-2 ${invalidFields.description ? 'border border-red-500' : ''}`}>
