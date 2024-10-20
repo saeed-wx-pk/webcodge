@@ -81,29 +81,29 @@ const page = () => {
           }
     }
     return (
-        <div className="mt-40 min-h-[60vh]">
+        <div className="mt-40 min-h-[60vh] max-w-[100vw]">
             <h3 className="text-grad text-4xl mx-auto w-fit mb-10">Admin Page.</h3>
             {isLogin ?
                 (
-                    <div className=''>
-                      <div className="w-fit mx-auto px-10 ">
+                    <div className='mx-auto'>
+                      <div className="w-fit mx-auto sm:px-10 ">
                         <h3 className="text-xl mb-5 text-gray-200 text-center mt-10">Orders.</h3>
                         <div className="flex flex-wrap gap-5 justify-center">
                           {
                             orders ? orders.map((order)=>{
                               return(
-                                <div className="rounded-2xl bg-foreground-gradient   px-10 py-7">
-                                  <div className="flex justify-between gap-5">
+                                <div className="rounded-2xl bg-foreground-gradient  px-4 sm:px-10 py-7">
+                                  <div className="flex sm:flex-row flex-col justify-between gap-5">
                                     <div className="">
                                       <p className="text-sm text-gray-200">{order.name}</p>
                                       <p className="text-xs text-gray-300">{order.email}</p>
                                     </div>
-                                    <div className=" text-end">
+                                    <div className="">
                                       <p className="text-sm text-gray-200">{order.serviceType}</p>
                                       <p className="text-sm text-gray-300">{order.webDevType }</p>
                                     </div>
                                   </div>
-                                  <p className="text-gray-500 mt-5 max-w-[50ch] text-sm">
+                                  <p className="text-gray-500 mt-5 max-w-[30ch] sm:max-w-[50ch] text-sm">
                                     {order.description}
                                   </p>
                                   <div className="mt-7">
@@ -123,15 +123,15 @@ const page = () => {
                           }
                         </div>
                       </div>
-                      <div className="w-fit mx-auto px-10 mt-5">
+                      <div className="w-fit mx-auto  mt-5">
                         <h3 className="text-xl mb-5 text-gray-200 text-center mt-10">Contacts.</h3>
                         <div className="flex flex-wrap gap-5 justify-center">
                           {
                             contacts ? contacts.map((contact)=>{
                               return(
-                                <div className="rounded-2xl bg-foreground-gradient   px-10 py-7">
+                                <div className="rounded-2xl bg-foreground-gradient px-7  sm:px-10 py-7">
                                   <div className=" ">
-                                      <p className="text-sm text-gray-400 max-w-[50ch]">{contact.message}</p>
+                                      <p className="text-sm text-gray-400 max-w-[30ch] sm:max-w-[50ch]">{contact.message}</p>
                                   </div>
                                   <div className="mt-5 flex justify-between">
                                       <p className="text-base text-gray-200">{contact.name}</p>
@@ -168,12 +168,12 @@ const page = () => {
                       </div>
                     </div>
                 ):(
-                    <div className='w-fit mx-auto bg-foreground-gradient rounded-3xl p-10'>
+                    <div className='w-fit mx-auto bg-foreground-gradient rounded-3xl p-5 sm:p-10'>
                         
-                        <Input value={adminCode} onChange={(e)=>setAdminCode(e.target.value)} type="text" placeholder="Admin Code" className='w-96'/>
+                        <Input value={adminCode} onChange={(e)=>setAdminCode(e.target.value)} type="text" placeholder="Admin Code" className=''/>
                         <Input value={password} onChange={(e)=>setPassword(e.target.value)} type="password" placeholder="passsword" className='mt-5'/>
                         
-                        <div className="flex justify-around">
+                        <div className="flex justify-around gap-4">
                             <Link href="/">
                                 <Button className='group w-fit mt-7'>
                                     <ArrowLeftIcon className="h-5 w-5 mr-1 transform -rotate-45 transition-transform duration-300 group-hover:rotate-0" />
