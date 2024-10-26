@@ -17,6 +17,18 @@ export type OrderRequest = {
   phNumber: number
   createdAt:Date
 }
+export type MeetRequest = {
+  name: string
+  email: string
+  userType: string
+  description: string
+  userIntrestry: string
+  challenge: string
+  isHaveWeb:string
+  webUrl: string
+  phNumber: number
+  createdAt:Date
+}
 export type ContactRequest = {
   name: string
   email: string
@@ -34,15 +46,23 @@ const page = () => {
     const [orders, setOrders] = useState<OrderRequest[]>([])
     const [contacts, setContacts] = useState<ContactRequest[]>([])
     const [emails, setEmails] = useState<EmailRequest[]>([])
+    const [meets, setMeets] = useState<MeetRequest[]>([])
 
     const fetchData = async ()=>{
       try {
         const orderRespone = await fetch('/api/create');
         const orderResult = await orderRespone.json()
         setOrders(orderResult);
+
+        const meetRespone = await fetch('/api/meet');
+        const meetResult = await meetRespone.json()
+        setMeets(meetResult);
+        console.log(meets);
+        
         const contactRespone = await fetch('/api/contact');
         const contactResult = await contactRespone.json()
         setContacts(contactResult);
+
         const emailRespone = await fetch('/api/email');
         const emailResult = await emailRespone.json()
         setEmails(emailResult);
@@ -86,6 +106,45 @@ const page = () => {
             {isLogin ?
                 (
                     <div className='mx-auto'>
+                      <div className="w-fit mx-auto sm:px-10 ">
+                        <h3 className="text-xl mb-5 text-gray-200 text-center mt-10">Meeting Members.</h3>
+                        <div className="flex flex-wrap gap-5 justify-center">
+                          {
+                            meets ? meets.map((meet)=>{
+                              return(
+                                <div className="rounded-2xl bg-foreground-gradient  px-4 sm:px-10 py-7">
+                                  <div className="flex sm:flex-row flex-col justify-between gap-5">
+                                    <div className="">
+                                      <p className="text-sm text-gray-200">{meet.name}</p>
+                                      <p className="text-xs text-gray-300">{meet.email}</p>
+                                    </div>
+                                    <div className="">
+                                      <p className="text-sm text-gray-200">{meet.userType}</p>
+                                      <p className="text-sm text-gray-300">{meet.userIntrestry }</p>
+                                    </div>
+                                  </div>
+                                  <p className="text-gray-500 mt-5 max-w-[30ch] sm:max-w-[50ch] text-sm">
+                                    {meet.description}
+                                  </p>
+                                  <span>{meet.isHaveWeb}</span>
+                                  
+                                  <div className="mt-7">
+                                    <p className="text-sm text-gray-300">{meet.phNumber}</p>
+                                    <div className="flex justify-between">
+                                      <p className="text-sm text-gray-400">{meet.challenge} </p>
+                                      <p className="text-sm text-gray-500">{new Date(meet.createdAt).toLocaleString()}</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              )
+                            }):(
+                              <div className="">
+                                No meets Yet !
+                              </div>
+                            )
+                          }
+                        </div>
+                      </div>
                       <div className="w-fit mx-auto sm:px-10 ">
                         <h3 className="text-xl mb-5 text-gray-200 text-center mt-10">Orders.</h3>
                         <div className="flex flex-wrap gap-5 justify-center">
